@@ -12,16 +12,12 @@ namespace BoletimDaClasse
 
             return quantidade;
         }
-
-        static void LerNome()
-        {
-            string nome;
-        }
-        static void LerNota()
+        static void LerNomeNota()
 
         {
             var quantidade = QuantidadeAlunos();
 
+            string[] vetor = new string[quantidade];
             double[,] notas = new double[quantidade, 3];
 
             Console.WriteLine("Informe as notas dos alunos: ");
@@ -41,7 +37,7 @@ namespace BoletimDaClasse
         {
             
             
-            LerNota();
+            LerNomeNota();
 
 
 
