@@ -4,26 +4,69 @@ namespace BoletimDaClasse
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static int QuantidadeAlunos()
         {
-            double[,] notas = new double[5, 3];
+            int quantidade;
+            Console.Write("informe a quantidade de alunos da sala: ");
+            quantidade = int.Parse(Console.ReadLine());
+
+            return quantidade;
+        }
+
+        static void LerNome()
+        {
+            string nome;
+        }
+        static void LerNota()
+
+        {
+            var quantidade = QuantidadeAlunos();
+
+            double[,] notas = new double[quantidade, 3];
 
             Console.WriteLine("Informe as notas dos alunos: ");
 
-            for (int aluno = 0; aluno < 5; aluno++)
+            for (int aluno = 0; aluno < quantidade; aluno++)
             {
-                Console.WriteLine("Aluno[{0}]:", (aluno +1));
+                Console.WriteLine("Aluno[{0}]:", (aluno + 1));
                 Console.WriteLine("informe a nota 1: ");
                 notas[aluno, 0] = double.Parse(Console.ReadLine());
                 Console.WriteLine("informe a nota 2: ");
                 notas[aluno, 1] = double.Parse(Console.ReadLine());
             }
 
-            //media
-            for (int aluno = 0; aluno < 5; aluno++)
-            {
-                notas[aluno, 2] = (notas[aluno, 0] + notas[aluno, 1]) / 2;
-            }
+        }
+
+        static void Main(string[] args)
+        {
+            
+            
+            LerNota();
+
+
+
+
+
+
+
+            //double[,] notas = new double[5, 3];
+
+            //Console.WriteLine("Informe as notas dos alunos: ");
+
+            //for (int aluno = 0; aluno < 5; aluno++)
+            //{
+            //    Console.WriteLine("Aluno[{0}]:", (aluno +1));
+            //    Console.WriteLine("informe a nota 1: ");
+            //    notas[aluno, 0] = double.Parse(Console.ReadLine());
+            //    Console.WriteLine("informe a nota 2: ");
+            //    notas[aluno, 1] = double.Parse(Console.ReadLine());
+            //}
+
+            ////media
+            //for (int aluno = 0; aluno < 5; aluno++)
+            //{
+            //    notas[aluno, 2] = (notas[aluno, 0] + notas[aluno, 1]) / 2;
+            //}
 
             //se for 100 notas?
             //for (int aluno = 0; aluno < 5; aluno++)
@@ -34,11 +77,11 @@ namespace BoletimDaClasse
             //    }
             //}
 
-            Console.WriteLine("As notas dos alunos da turma são:");
-            for (int aluno = 0; aluno < 5; aluno++)
-            {
-                Console.WriteLine("nota 1: {0}\tnota 2: {1}\tmedia: {2}", notas[aluno,0], notas[aluno, 1], notas[aluno, 2]);
-            }
+            //Console.WriteLine("As notas dos alunos da turma são:");
+            //for (int aluno = 0; aluno < 5; aluno++)
+            //{
+            //    Console.WriteLine("nota 1: {0}\tnota 2: {1}\tmedia: {2}", notas[aluno,0], notas[aluno, 1], notas[aluno, 2]);
+            //}
 
 
             //double media;
