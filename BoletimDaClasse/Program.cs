@@ -41,21 +41,6 @@ namespace BoletimDaClasse
             }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             //double media;
             //for (int coluna = 0; coluna < 2; coluna++)
             //{
