@@ -25,11 +25,34 @@ namespace BoletimDaClasse
                 notas[aluno, 2] = (notas[aluno, 0] + notas[aluno, 1]) / 2;
             }
 
+            //se for 100 notas?
+            //for (int aluno = 0; aluno < 5; aluno++)
+            //{
+            //    for (int colunas = 0; colunas < 100; colunas++)
+            //    {
+            //        notas[aluno, 99] = notas[aluno, 99] + notas[aluno, colunas];
+            //    }
+            //}
+
             Console.WriteLine("As notas dos alunos da turma são:");
             for (int aluno = 0; aluno < 5; aluno++)
             {
                 Console.WriteLine("nota 1: {0}\tnota 2: {1}\tmedia: {2}", notas[aluno,0], notas[aluno, 1], notas[aluno, 2]);
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
