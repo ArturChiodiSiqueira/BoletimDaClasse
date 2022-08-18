@@ -19,6 +19,12 @@ namespace BoletimDaClasse
                 notas[aluno, 1] = double.Parse(Console.ReadLine());
             }
 
+            //media
+            for (int aluno = 0; aluno < 5; aluno++)
+            {
+                notas[aluno, 2] = (notas[aluno, 0] + notas[aluno, 1]) / 2;
+            }
+
             Console.WriteLine("As notas dos alunos da turma são:");
             for (int aluno = 0; aluno < 5; aluno++)
             {
