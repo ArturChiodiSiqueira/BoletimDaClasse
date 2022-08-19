@@ -9,11 +9,15 @@ namespace BoletimDaClasse
             int quantidade = QuantidadeAlunos();
             string[,] boletimClasse = new string[quantidade, 4];
 
+            Console.Clear();
+
             ColetaDadosNomeNota(quantidade, boletimClasse);
 
             Console.Clear();
             
             ImprimeResultado(quantidade, boletimClasse);
+            Console.WriteLine("Pressione qualquer tecla para finalizar a aplicacao.");
+            Console.ReadKey();
         }
         static int QuantidadeAlunos()
         {
