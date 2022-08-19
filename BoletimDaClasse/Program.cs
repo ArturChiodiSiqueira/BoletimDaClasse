@@ -4,104 +4,42 @@ namespace BoletimDaClasse
 {
     internal class Program
     {
-        static int QuantidadeAlunos()
-        {
-            int quantidade;
-            Console.Write("informe a quantidade de alunos da sala: ");
-            quantidade = int.Parse(Console.ReadLine());
-
-            return quantidade;
-        }
-        static void LerNomeNota()
-
-        {
-            var quantidade = QuantidadeAlunos();
-
-            string[] vetor = new string[quantidade];
-            double[,] notas = new double[quantidade, 3];
-
-            Console.WriteLine("Informe as notas dos alunos: ");
-
-            for (int aluno = 0; aluno < quantidade; aluno++)
-            {
-                Console.WriteLine("Aluno[{0}]:", (aluno + 1));
-                Console.WriteLine("informe a nota 1: ");
-                notas[aluno, 0] = double.Parse(Console.ReadLine());
-                Console.WriteLine("informe a nota 2: ");
-                notas[aluno, 1] = double.Parse(Console.ReadLine());
-            }
-
-        }
 
         static void Main(string[] args)
         {
-            
-            
-            LerNomeNota();
+            int quantidade;
+            Console.Write("Informe a quantidade de aluno: ");
+            quantidade = int.Parse(Console.ReadLine());
 
+            string[,] boletimClasse = new string[quantidade, 4];
 
+            for (int alunos = 0; alunos < quantidade; alunos++)
+            {
+                Console.Write("Digite o nome do aluno #" + (alunos + 1) + ": ");
+                boletimClasse[alunos, 0] = Console.ReadLine();
+                Console.Write("informe a nota 1: ");
+                boletimClasse[alunos, 1] = Console.ReadLine();
+                Console.Write("informe a nota 2: ");
+                boletimClasse[alunos, 2] = Console.ReadLine();
 
+                boletimClasse[alunos, 3] = ((Convert.ToDecimal(boletimClasse[alunos, 1]) + Convert.ToDecimal(boletimClasse[alunos, 2])) / 2).ToString();
+            }
+            Console.Clear();
+            for (int alunos = 0; alunos < quantidade; alunos++)
+            {
+                Console.WriteLine("\tBoletim do aluno " + boletimClasse[alunos, 0]);
+                Console.WriteLine("nota 1: {0}\tnota 2: {1}\tmedia: {2}", boletimClasse[alunos, 1], boletimClasse[alunos, 2], boletimClasse[alunos, 3]);
 
-
-
-
-            //double[,] notas = new double[5, 3];
-
-            //Console.WriteLine("Informe as notas dos alunos: ");
-
-            //for (int aluno = 0; aluno < 5; aluno++)
-            //{
-            //    Console.WriteLine("Aluno[{0}]:", (aluno +1));
-            //    Console.WriteLine("informe a nota 1: ");
-            //    notas[aluno, 0] = double.Parse(Console.ReadLine());
-            //    Console.WriteLine("informe a nota 2: ");
-            //    notas[aluno, 1] = double.Parse(Console.ReadLine());
-            //}
-
-            ////media
-            //for (int aluno = 0; aluno < 5; aluno++)
-            //{
-            //    notas[aluno, 2] = (notas[aluno, 0] + notas[aluno, 1]) / 2;
-            //}
-
-            //se for 100 notas?
-            //for (int aluno = 0; aluno < 5; aluno++)
-            //{
-            //    for (int colunas = 0; colunas < 100; colunas++)
-            //    {
-            //        notas[aluno, 99] = notas[aluno, 99] + notas[aluno, colunas];
-            //    }
-            //}
-
-            //Console.WriteLine("As notas dos alunos da turma são:");
-            //for (int aluno = 0; aluno < 5; aluno++)
-            //{
-            //    Console.WriteLine("nota 1: {0}\tnota 2: {1}\tmedia: {2}", notas[aluno,0], notas[aluno, 1], notas[aluno, 2]);
-            //}
-
-
-            //double media;
-            //for (int coluna = 0; coluna < 2; coluna++)
-            //{
-            //    for (int linha = 0; linha < 5; linha++)
-            //    {
-            //        Console.Write("PARA O ALUNO #" + (linha + 1) + " INFORME A NOTA #" + (coluna + 1) + ": ");
-            //        notas[linha, coluna] = double.Parse(Console.ReadLine());
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine("    nota 1\t    nota 2\t    boletim");
-            //for (int linha = 0; linha < 5; linha++)
-            //{
-
-            //    for (int coluna = 0; coluna < 3; coluna++)
-            //    {
-            //        media = (notas[linha, coluna] + notas[linha, coluna]) / 2;
-
-            //        Console.Write("matriz[{0},{1}]={2}\t", linha, coluna, notas[linha, coluna]);
-            //    }
-            //    Console.WriteLine();
-            //}
+                if (Convert.ToDecimal(boletimClasse[alunos, 3]) >= 6)
+                {
+                    Console.WriteLine("Aluno Aprovado!");
+                }
+                else 
+                {
+                    Console.WriteLine("Aluno Reprovado!");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
