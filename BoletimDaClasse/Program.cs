@@ -4,34 +4,29 @@ namespace BoletimDaClasse
 {
     internal class Program
     {
+        static void Main(string[] args)
+        {
+            int quantidade = QuantidadeAlunos();
+            string[,] boletimClasse = new string[quantidade, 4];
+
+            ColetaDadosNomeNota(quantidade, boletimClasse);
+
+            Console.Clear();
+            
+            ImprimeResultado(quantidade, boletimClasse);
+        }
         static int QuantidadeAlunos()
         {
             int quantidade;
+
             Console.Write("Informe a quantidade de aluno: ");
             quantidade = int.Parse(Console.ReadLine());
+
             return quantidade;
         }
-        static void Main(string[] args)
+
+        static void ColetaDadosNomeNota(int quantidade, string[,] boletimClasse)
         {
-
-
-
-
-
-            QuantidadeAlunos();
-
-
-
-
-
-
-
-            int quantidade;
-            Console.Write("Informe a quantidade de aluno: ");
-            quantidade = int.Parse(Console.ReadLine());
-
-            string[,] boletimClasse = new string[quantidade, 4];
-
             for (int alunos = 0; alunos < quantidade; alunos++)
             {
                 Console.Write("Digite o nome do aluno #" + (alunos + 1) + ": ");
@@ -45,7 +40,7 @@ namespace BoletimDaClasse
                     Console.WriteLine("nota invalida");
                     Console.Write("informe a nota 1: ");
                     boletimClasse[alunos, 1] = Console.ReadLine();
-                } 
+                }
                 Console.Write("informe a nota 2: ");
                 boletimClasse[alunos, 2] = Console.ReadLine();
 
@@ -58,7 +53,10 @@ namespace BoletimDaClasse
 
                 boletimClasse[alunos, 3] = ((Convert.ToDecimal(boletimClasse[alunos, 1]) + Convert.ToDecimal(boletimClasse[alunos, 2])) / 2).ToString();
             }
-            Console.Clear();
+        }
+
+        static void ImprimeResultado(int quantidade, string[,] boletimClasse)
+        {
             for (int alunos = 0; alunos < quantidade; alunos++)
             {
                 Console.WriteLine("\tBoletim do aluno " + boletimClasse[alunos, 0]);
@@ -68,7 +66,7 @@ namespace BoletimDaClasse
                 {
                     Console.WriteLine("\tAluno Aprovado!");
                 }
-                else 
+                else
                 {
                     Console.WriteLine("\tAluno Reprovado!");
                 }
