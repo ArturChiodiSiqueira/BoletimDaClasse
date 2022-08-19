@@ -22,6 +22,7 @@ namespace BoletimDaClasse
             Console.WriteLine("Pressione qualquer tecla para finalizar a aplicacao.");
             Console.ReadKey();
         }
+
         static int QuantidadeAlunos()
         {
             int quantidade;
