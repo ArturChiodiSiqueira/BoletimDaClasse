@@ -13,8 +13,11 @@ namespace BoletimDaClasse
 
             ColetaDadosNomeNota(quantidade, boletimClasse);
 
+            Console.WriteLine("\n\nPressione qualquer tecla para continuar.");
+            Console.ReadKey();
+
             Console.Clear();
-            
+
             ImprimeResultado(quantidade, boletimClasse);
             Console.WriteLine("Pressione qualquer tecla para finalizar a aplicacao.");
             Console.ReadKey();
