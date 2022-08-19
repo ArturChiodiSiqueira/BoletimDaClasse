@@ -63,16 +63,22 @@ namespace BoletimDaClasse
         {
             for (int alunos = 0; alunos < quantidade; alunos++)
             {
-                Console.WriteLine("\tBoletim do aluno " + boletimClasse[alunos, 0]);
-                Console.WriteLine("nota 1: {0}\tnota 2: {1}\tmedia: {2}", boletimClasse[alunos, 1], boletimClasse[alunos, 2], boletimClasse[alunos, 3]);
+                Console.WriteLine("\t\tBoletim do aluno " + boletimClasse[alunos, 0]);
+                Console.WriteLine("------------------------------------------------------------");
+                Console.WriteLine("nota 1: {0}\t||\tnota 2: {1}\t||\tmedia: {2}", boletimClasse[alunos, 1], boletimClasse[alunos, 2], boletimClasse[alunos, 3]);
+                Console.WriteLine("------------------------------------------------------------");
 
                 if (Convert.ToDecimal(boletimClasse[alunos, 3]) >= 6)
                 {
-                    Console.WriteLine("\tAluno Aprovado!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\t\t   Aluno Aprovado!");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 else
                 {
-                    Console.WriteLine("\tAluno Reprovado!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\t\t   Aluno Reprovado!");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 Console.ReadKey();
                 Console.WriteLine();
